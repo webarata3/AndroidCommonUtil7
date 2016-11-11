@@ -76,7 +76,7 @@ task findbugs(type: FindBugs) {
     reports {
         xml.enabled = true
     }
-    classpath = files()
+//s    classpath = files()
 }
 
 //task findbugsConvertUtf8 << {
