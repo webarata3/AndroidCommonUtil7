@@ -90,15 +90,23 @@ task findbugs(type: FindBugs) {
 //    fw.close()
 //}
 
-//apply plugin: 'jacoco'
-//
-//jacocoTestReport {
-//    reports {
-//        html.enabled = true
-//        xml.enabled = true
-//        csv.enabled = true
-//    }
-//}
+apply plugin: 'jacoco'
+
+task jacoco(type: JacocoReport) {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/reports/jacoco/html"
+    }
+    classDirectories = fileTree(
+            dir: 'build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/BuildConfig.class',
+            ])
+    sourceDirectories = files('src/main/java')
+    executionData = files('build/jacoco/testDebugUnitTest.exec')
+}
 
 buildscript {
     repositories {
