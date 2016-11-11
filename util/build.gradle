@@ -90,15 +90,15 @@ task findbugs(type: FindBugs) {
 //    fw.close()
 //}
 
-apply plugin: 'jacoco'
-
-jacocoTestReport {
-    reports {
-        html.enabled = true
-        xml.enabled = true
-        csv.enabled = true
-    }
-}
+//apply plugin: 'jacoco'
+//
+//jacocoTestReport {
+//    reports {
+//        html.enabled = true
+//        xml.enabled = true
+//        csv.enabled = true
+//    }
+//}
 
 buildscript {
     repositories {
