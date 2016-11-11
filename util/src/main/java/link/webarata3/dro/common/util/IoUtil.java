@@ -1,4 +1,4 @@
-package link.webarata3.common.util;
+package link.webarata3.dro.common.util;
 
 import java.io.Closeable;
 import java.io.File;
@@ -17,7 +17,7 @@ public abstract class IoUtil {
     /**
      * ファイルのコピーをする。<br>
      * コピーしたファイルのサイズのチェックも行う。
-     * 
+     *
      * @param srcFileName
      *            コピー元ファイル名
      * @param destFileName
@@ -38,8 +38,8 @@ public abstract class IoUtil {
             fis = new FileInputStream(srcFile);
             fos = new FileOutputStream(destFileName);
         } catch (FileNotFoundException e) {
-            closeQuietly(fis);
             closeQuietly(fos);
+            closeQuietly(fis);
             throw e;
         }
         copyFile(fis, fos);

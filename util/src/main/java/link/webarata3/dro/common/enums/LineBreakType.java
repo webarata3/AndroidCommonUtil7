@@ -1,8 +1,8 @@
-package link.webarata3.common.enums;
+package link.webarata3.dro.common.enums;
 
 /**
  * 改行のタイプのEnum
- * 
+ *
  * @author webarata3
  *
  */
@@ -13,7 +13,7 @@ public enum LineBreakType {
 
     /**
      * 改行コードの実際の文字列を取得する
-     * 
+     *
      * @return 改行コードの実際の文字列
      */
     public String getPhysicalString() {

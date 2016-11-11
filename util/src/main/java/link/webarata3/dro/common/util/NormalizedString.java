@@ -1,4 +1,4 @@
-package link.webarata3.common.util;
+package link.webarata3.dro.common.util;
 
 import java.text.Normalizer;
 

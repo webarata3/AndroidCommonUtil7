@@ -1,4 +1,4 @@
-package link.webarata3.common.util;
+package link.webarata3.dro.common.util;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -9,7 +9,7 @@ import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
-import link.webarata3.common.enums.LineBreakType;
+import link.webarata3.dro.common.enums.LineBreakType;
 
 @RunWith(Enclosed.class)
 public class StringUtilTest {
