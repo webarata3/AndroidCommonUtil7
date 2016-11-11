@@ -36,6 +36,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
 
     testCompile 'junit:junit:4.12'
+    testCompile 'org.hamcrest:hamcrest-core:1.3'
 }
 
 apply plugin: "maven"
@@ -46,7 +47,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://${repo.absolutePath}"
-            pom.version = '0.1.0'
+            pom.version = '0.3.0'
             pom.groupId = 'link.arata.dro.common'
             pom.artifactId = 'dro-util'
         }
@@ -60,9 +61,54 @@ android.libraryVariants.all { variant ->
             classifier = "sources"
             from variant.javaCompile.source
         }
-
-        artifacts {
-            archives tasks["sourcesJar${variant.name.capitalize()}"]
-        }
     }
 }
+
+apply plugin: 'findbugs'
+
+task findbugs(type: FindBugs) {
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "low" // ＊どのレベルの報告まで対応するかで変更＊
+    classes = files("build/intermediates/classes/")
+    source 'src/main'
+    include '**/*.java'
+    reports {
+        xml.enabled = true
+    }
+    classpath = files()
+}
+
+//task findbugsConvertUtf8 << {
+//    def filename="${project.rootDir}/build/reports/findbugs/main.html"
+//    def file = new File(filename)
+//    def text = file.getText()
+//    text = text.replaceAll(/<head>/, "<head>\n<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>")
+//
+//    def fw=new File(filename).newWriter()
+//    fw.writeLine(text)
+//    fw.close()
+//}
+
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = true
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
+    }
+}
+
+apply plugin: 'com.github.kt3k.coveralls'
+
