@@ -5,11 +5,13 @@ jdk:
 
 android:
   components:
-    - tools
     - platform-tools
+    - tools
     - build-tools-25.0.0
+#    - android-25
   licenses:
-    - 'android-sdk-license-8933bad161af4178b1185d1a37fbf41ea5269c55'
+    - 'android-sdk-license-.+'
+
 script:
     - ./gradlew test
 
