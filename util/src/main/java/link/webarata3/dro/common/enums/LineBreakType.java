@@ -1,5 +1,7 @@
 package link.webarata3.dro.common.enums;
 
+import android.support.annotation.NonNull;
+
 /**
  * 改行のタイプのEnum
  *
@@ -16,11 +18,12 @@ public enum LineBreakType {
      *
      * @return 改行コードの実際の文字列
      */
+    @NonNull
     public String getPhysicalString() {
         return physicalString;
     }
 
-    private LineBreakType(String physicalString) {
+    private LineBreakType(@NonNull String physicalString) {
         this.physicalString = physicalString;
     }
 }

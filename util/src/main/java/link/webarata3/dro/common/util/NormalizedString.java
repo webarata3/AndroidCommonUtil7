@@ -1,5 +1,7 @@
 package link.webarata3.dro.common.util;
 
+import android.support.annotation.NonNull;
+
 import java.text.Normalizer;
 
 /**
@@ -18,7 +20,7 @@ public class NormalizedString {
      * @param originalString
      *            オリジナルの文字列
      */
-    public NormalizedString(String originalString) {
+    public NormalizedString(@NonNull String originalString) {
         this.originalString = originalString;
         this.normalizedString = Normalizer.normalize(this.originalString, Normalizer.Form.NFC);
     }
@@ -28,6 +30,7 @@ public class NormalizedString {
      * 
      * @return オリジナルの文字列
      */
+    @NonNull
     public String getOriginalString() {
         return originalString;
     }
@@ -50,6 +53,7 @@ public class NormalizedString {
      * @throws IndexOutOfBoundsException
      *             文字列の範囲外へのアクセスの場合
      */
+    @NonNull
     public String charAt(int index) {
         if (index <= -1 || index >= length()) {
             throw new IndexOutOfBoundsException("index: " + index);

@@ -1,5 +1,8 @@
 package link.webarata3.dro.common.util;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +30,7 @@ public abstract class IoUtil {
      * @throws IOException
      *             ファイルが正しくコピーできていない場合
      */
-    public static void copyFile(String srcFileName, String destFileName) throws FileNotFoundException, IOException {
+    public static void copyFile(@NonNull String srcFileName, @NonNull String destFileName) throws FileNotFoundException, IOException {
         File srcFile = new File(srcFileName);
         File destFile = new File(destFileName);
 
@@ -59,7 +62,7 @@ public abstract class IoUtil {
      * @throws IOException
      *             ファイルが正しくコピーできない場合。
      */
-    public static void copyFile(FileInputStream fis, FileOutputStream fos) throws IOException {
+    public static void copyFile(@NonNull FileInputStream fis, @NonNull FileOutputStream fos) throws IOException {
         FileChannel inputChannel = fis.getChannel();
         try {
             FileChannel outputChannel = fos.getChannel();
@@ -79,7 +82,7 @@ public abstract class IoUtil {
      * @param closeable
      *            クローズするファイル
      */
-    public static void closeQuietly(Closeable closeable) {
+    public static void closeQuietly(@Nullable Closeable closeable) {
         try {
             if (closeable != null) {
                 closeable.close();

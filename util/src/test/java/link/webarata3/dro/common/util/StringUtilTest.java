@@ -1,8 +1,5 @@
 package link.webarata3.dro.common.util;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
 import org.junit.experimental.runners.Enclosed;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
@@ -10,6 +7,9 @@ import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 import link.webarata3.dro.common.enums.LineBreakType;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Enclosed.class)
 public class StringUtilTest {

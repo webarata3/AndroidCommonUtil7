@@ -1,5 +1,7 @@
 package link.webarata3.dro.common.util;
 
+import android.support.annotation.NonNull;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -30,7 +32,7 @@ public abstract class RegexUtil {
      *            パターン
      * @return 取得したパターン
      */
-    public static synchronized Pattern getPattern(String regex) {
+    public static synchronized Pattern getPattern(@NonNull String regex) {
         Pattern pattern = PATTERN_CASH.get(regex);
         if (pattern == null) {
             pattern = Pattern.compile(regex);
@@ -48,7 +50,7 @@ public abstract class RegexUtil {
      *            検査する文字列
      * @return パターンにinputが合致する場合true
      */
-    public static boolean find(String regex, CharSequence input) {
+    public static boolean find(@NonNull  String regex, @NonNull CharSequence input) {
         Pattern pattern = getPattern(regex);
         Matcher matcher = pattern.matcher(input);
         return matcher.find();
@@ -63,7 +65,7 @@ public abstract class RegexUtil {
      *            検査する文字列
      * @return パターンにinputが合致する場合true
      */
-    public static boolean perfectMatch(String regex, CharSequence input) {
+    public static boolean perfectMatch(@NonNull String regex, @NonNull CharSequence input) {
         return find("^[" + regex + "]*$", input);
     }
 }

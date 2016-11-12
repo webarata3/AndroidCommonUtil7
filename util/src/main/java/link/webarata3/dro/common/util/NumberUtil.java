@@ -1,5 +1,7 @@
 package link.webarata3.dro.common.util;
 
+import android.support.annotation.Nullable;
+
 /**
  * 数値関連のユーティリティクラス
  * 
@@ -14,7 +16,7 @@ public abstract class NumberUtil {
      *            変換する文字列
      * @return 変換した数値
      */
-    public static Integer formatInt(String value) {
+    public static Integer formatInt(@Nullable String value) {
         if (value == null) {
             return null;
         }

@@ -1,5 +1,8 @@
 package link.webarata3.dro.common.util;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import link.webarata3.dro.common.enums.LineBreakType;
 
 /**
@@ -15,7 +18,7 @@ public abstract class StringUtil {
      *            検査する文字列
      * @return 文字列がnullもしくは空文字列の場合true
      */
-    public static boolean isEmpty(String value) {
+    public static boolean isEmpty(@Nullable String value) {
         return value == null || (value.length() == 0);
     }
 
@@ -26,7 +29,7 @@ public abstract class StringUtil {
      *            検査する文字列
      * @return 文字列がnullもしくは空文字列でない場合true
      */
-    public static boolean isNotEmpty(String value) {
+    public static boolean isNotEmpty(@Nullable String value) {
         return !isEmpty(value);
     }
 
@@ -37,8 +40,9 @@ public abstract class StringUtil {
      *            対象の文字列
      * @return 左側をtrimした結果の文字列
      */
-    public static String trimLeft(String value) {
-        if (StringUtil.isEmpty(value)) return value;
+    @Nullable
+    public static String trimLeft(@Nullable  String value) {
+        if (isEmpty(value)) return value;
 
         int i = 0;
         for (; i < value.length(); i++) {
@@ -57,8 +61,9 @@ public abstract class StringUtil {
      *            対象の文字列
      * @return 右側をtrimした結果の文字列
      */
-    public static String trimRight(String value) {
-        if (StringUtil.isEmpty(value)) return value;
+    @Nullable
+    public static String trimRight(@Nullable String value) {
+        if (isEmpty(value)) return value;
 
         int i = value.length() - 1;
         for (; i >= 0; i--) {
@@ -77,7 +82,8 @@ public abstract class StringUtil {
      *            対象の文字列
      * @return 右側をtrimした結果の文字列
      */
-    public static String trim(String value) {
+    @Nullable
+    public static String trim(@Nullable String value) {
         String trimValue = trimLeft(value);
         return trimRight(trimValue);
     }
@@ -91,7 +97,10 @@ public abstract class StringUtil {
      *            改行文字
      * @return 改行を正規化した文字列
      */
-    public static String normalizeLineBreak(String value, LineBreakType lineBreakType) {
+    @Nullable
+    public static String normalizeLineBreak(
+            @Nullable String value, @NonNull LineBreakType lineBreakType) {
+        if (isEmpty(value)) return value;
         // LFに正規化してから、指定の改行コードに正規化する
         value = value.replace(LineBreakType.CRLF.getPhysicalString(), LineBreakType.LF.getPhysicalString());
         value = value.replace(LineBreakType.CR.getPhysicalString(), LineBreakType.LF.getPhysicalString());
