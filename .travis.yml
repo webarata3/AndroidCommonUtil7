@@ -8,10 +8,11 @@ android:
 #    - platform-tools
 #    - tools
     # ビルドツールバージョン
-    - build-tools-24.0.2
+    - build-tools-25.0.0
     - extra-android-support
+    - extra-google-m2repository
     # Android SDKバージョン
-    - android-24
+    - android-25
   licenses:
     - 'android-sdk-license-.+'
 
