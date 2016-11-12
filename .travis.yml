@@ -7,8 +7,11 @@ android:
   components:
     - platform-tools
     - tools
+    # ビルドツールバージョン
     - build-tools-25.0.0
+    # Android SDKバージョン
     - android-25
+    - extra-android-support
   licenses:
     - 'android-sdk-license-.+'
 
