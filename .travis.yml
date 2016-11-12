@@ -9,9 +9,9 @@ android:
 #    - tools
     # ビルドツールバージョン
     - build-tools-25.0.0
+    - extra-android-support
     # Android SDKバージョン
     - android-25
-    - extra-android-support
   licenses:
     - 'android-sdk-license-.+'
 
