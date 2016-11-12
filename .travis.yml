@@ -16,7 +16,7 @@ android:
     - 'android-sdk-license-.+'
 
 script:
-    - ./gradlew test --stacktrace
+    - ./gradlew test
 
 after_success:
     - ./gradlew jacoco coveralls
