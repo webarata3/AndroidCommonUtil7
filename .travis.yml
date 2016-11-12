@@ -18,7 +18,7 @@ android:
 
 before_script:
   - export ANDROID_HOME=/usr/local/android-sdk
-  - mkdir -r /usr/local/android-sdk/licenses
+  - mkdir -p/usr/local/android-sdk/licenses
   - echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > /usr/local/android-skd/licenses/android-sdk-license
 
 script:
