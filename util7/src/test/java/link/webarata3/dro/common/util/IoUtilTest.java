@@ -34,7 +34,6 @@ public class IoUtilTest {
 
         @Test
         public void copyFileのファイル名の場合のテスト() throws Exception {
-            Assert.fail();
             IoUtil.copyFile(BASE_DIR + File.separator + "IoUtilSrc.txt", BASE_DIR + File.separator + "IoUtilDest.txt");
 
             assertThat(new File(BASE_DIR + File.separator + "IoUtilDest.txt").exists(), is(true));
