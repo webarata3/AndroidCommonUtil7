@@ -20,7 +20,7 @@ before_script:
   - export ANDROID_HOME=/usr/local/android-sdk
   - mkdir -p /usr/local/android-sdk/licenses
   - touch /usr/local/android-skd/licenses/android-sdk-license
-  - echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > /usr/local/android-skd/licenses/android-sdk-license
+  - echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > /usr/local/android-sdk/licenses/android-sdk-license
 
 script:
   - ./gradlew test
