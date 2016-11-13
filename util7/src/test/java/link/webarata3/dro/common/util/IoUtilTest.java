@@ -1,6 +1,7 @@
 package link.webarata3.dro.common.util;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -33,6 +34,7 @@ public class IoUtilTest {
 
         @Test
         public void copyFileのファイル名の場合のテスト() throws Exception {
+            Assert.fail();
             IoUtil.copyFile(BASE_DIR + File.separator + "IoUtilSrc.txt", BASE_DIR + File.separator + "IoUtilDest.txt");
 
             assertThat(new File(BASE_DIR + File.separator + "IoUtilDest.txt").exists(), is(true));
