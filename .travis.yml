@@ -5,8 +5,8 @@ jdk:
 
 android:
   components:
-    #- platform-tools
-    #- tools
+    - platform-tools
+    - tools
     # ビルドツールバージョン
     - build-tools-25.0.0
     - extra-android-support
