@@ -75,8 +75,13 @@ android.libraryVariants.all { variant ->
             destinationDir = reporting.file("${variant.name}-docs")
             ext.androidJar = "${getSdkDir()}/platforms/${android.compileSdkVersion}/android.jar"
             classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+            options.encoding = 'UTF-8'
+            options.charSet 'UTF-8'
+            exclude '**/BuildConfig.java'
+            exclude '**/R.java'
+            exclude '**/R$*.java'
         }
-        task("javadocsJar${variant.name.capitalize()}", type: Jar) {
+        task("javadocsJar${variant.name.capitalize()}", type: Jar, dependsOn: "javadoc${variant.name.capitalize()}") {
             classifier = "javadoc"
             from tasks[javadocTaskName].destinationDir
         }
