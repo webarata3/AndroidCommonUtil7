@@ -131,4 +131,4 @@ buildscript {
 
 apply plugin: 'com.github.kt3k.coveralls'
 
-coveralls.jacocoReportPath = 'build/util7/reports/jacoco/jacoco/report.xml'
+coveralls.jacocoReportPath = 'build/reports/jacoco/jacoco/jacoco.xml'
