@@ -1,4 +1,4 @@
-package link.webarata3.dro.common.util;
+package link.webarata3.dro.common.util7;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;

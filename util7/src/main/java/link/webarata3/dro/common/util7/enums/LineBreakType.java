@@ -1,4 +1,4 @@
-package link.webarata3.dro.common.enums;
+package link.webarata3.dro.common.util7.enums;
 
 import android.support.annotation.NonNull;
 

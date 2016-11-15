@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidCommonUtil7.iml" filepath="$PROJECT_DIR$/AndroidCommonUtil7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidUtil7.iml" filepath="$PROJECT_DIR$/AndroidUtil7.iml" />
       <module fileurl="file://$PROJECT_DIR$/util7/util7.iml" filepath="$PROJECT_DIR$/util7/util7.iml" />
     </modules>
   </component>

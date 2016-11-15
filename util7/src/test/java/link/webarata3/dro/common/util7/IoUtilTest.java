@@ -1,7 +1,6 @@
-package link.webarata3.dro.common.util;
+package link.webarata3.dro.common.util7;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
