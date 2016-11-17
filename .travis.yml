@@ -25,5 +25,5 @@ before_script:
 script:
   - ./gradlew test
 
-#after_success:
-#  - ./gradlew jacoco coveralls
+after_success:
+  - ./gradlew jacoco coveralls
