@@ -3,6 +3,10 @@ language: android
 jdk:
   - oraclejdk8
 
+env:
+  global:
+     - secure: "vDbqpz5foBAHR9/8Pcqzm8DXzGrAa13JuVR2TYvXx6W9IRYB0/kYgvGeWWCVTRY24g5eb4+sEJoCjm5MyHRWaPTx6+/F43dUn17+QMia21kV0lciJD9NMqhDnpKb3pJeNr/FCCE9bEi/2Q9hZTQSTzINf2mftaT0De1sa4g0k5waPQoABRO1i3Q48m1s6DVnGALsuW+oFlKI9PixfjCA+CXFY/dZ9C/kYow0AOHgQEBmZbuALUcWarNq10a1g6wDPeM44JQ8ZR8LPkOklVMSj18trQcqlTKj9FwPU+k/vEyTuDhkT4ClqZc0ub2eqIv1LhqZVGjtVko/wUHiTdWNXUac2Vctfuxf3+pLads2JSl/0eO1VA2/cJEMG+4GubDM4tKRuJJ/v6tXOqyXNUEhV0L1He3r78a63dnJI2+nKlzwsQY3E3t5AenrVHDH19W5jj07lqCf7v92TfA18adougGx1MCPlbdfByPkwZvpelxoRmcEmE1PWh3q86M9KSgVMPvY49iNhCva71EB/tsHRQ5XencDAO41m/U2zAU5vyhxTOvPlctzoUUH8ZYdKQ5buRs8h086zBXhZL3w4eeogmXm7/Df0tnhPA7bG37Texz6r02OFgS7wA2Agtsmo6jeJPcQs91uVkD9SSTISku1RwS+k5ZBZNSHpSGC8+by54w="
+
 android:
   components:
     - platform-tools
