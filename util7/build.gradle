@@ -142,16 +142,6 @@ task jacoco(type: JacocoReport) {
     executionData = files('build/jacoco/testDebugUnitTest.exec')
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.7.0'
-    }
-}
-
 apply plugin: 'com.github.kt3k.coveralls'
 
 coveralls {
