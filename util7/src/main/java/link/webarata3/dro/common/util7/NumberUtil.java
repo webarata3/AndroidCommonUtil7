@@ -21,7 +21,10 @@ public abstract class NumberUtil {
             return null;
         }
         try {
-            return Integer.parseInt(value);
+            if (RegexUtil.find("^(0|[-]?[1-9][0-9]*)$", value) ) {
+                return Integer.parseInt(value);
+            }
+            return null;
         } catch (NumberFormatException e) {
             return null;
         }
