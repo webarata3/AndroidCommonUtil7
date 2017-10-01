@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 19
@@ -35,7 +35,7 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-core:1.3'
@@ -99,51 +99,33 @@ android.libraryVariants.all { variant ->
     }
 }
 
-apply plugin: 'findbugs'
-
-task findbugs(type: FindBugs) {
-    ignoreFailures = true
-    effort = "max"
-    reportLevel = "low" // ＊どのレベルの報告まで対応するかで変更＊
-    classes = files("build/intermediates/classes/")
-    source 'src/main'
-    include '**/*.java'
-    reports {
-        xml.enabled = true
-    }
-}
-
-//task findbugsConvertUtf8 << {
-//    def filename="${project.rootDir}/build/reports/findbugs/main.html"
-//    def file = new File(filename)
-//    def text = file.getText()
-//    text = text.replaceAll(/<head>/, "<head>\n<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>")
-//
-//    def fw=new File(filename).newWriter()
-//    fw.writeLine(text)
-//    fw.close()
-//}
-
 apply plugin: 'jacoco'
 
-task jacoco(type: JacocoReport) {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination "${buildDir}/reports/jacoco/html"
-    }
-    classDirectories = fileTree(
-            dir: '${buildDir}/build/intermediates/classes/debug',
-            excludes: ['**/R.class',
-                       '**/R$*.class',
-                       '**/BuildConfig.class'
-            ])
-    sourceDirectories = files('src/main/java')
-    executionData = files('${buildDir}/build/jacoco/testDebugUnitTest.exec')
+jacoco {
+    toolVersion = "0.7.9"
 }
 
-apply plugin: 'com.github.kt3k.coveralls'
+task jacocoTestReport(type: JacocoReport) {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
 
-coveralls {
-    jacocoReportPath = '${buildDir}/build/reports/jacoco/jacoco/jacoco.xml'
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec")
+}
+
+// FindBugs
+// FindBugs plugin
+// task check
+// レポート build/reports/findbugs/main.xml
+apply plugin: 'findbugs'
+
+findbugs {
+    ignoreFailures = true
 }
