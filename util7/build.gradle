@@ -56,16 +56,6 @@ uploadArchives {
     }
 }
 
-// SDKの場所を取得する
-def getSdkDir() {
-//    Properties properties = new Properties()
-//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-//    def sdkDir = properties.getProperty('sdk.dir', null)
-
-//    return sdkDir
-    return System.properties['ANDROID_HOME']
-}
-
 // http://vividcode.hatenablog.com/entry/howto/publish-aar-package-to-maven-central-with-gradle
 android.libraryVariants.all { variant ->
     if (variant.name == 'release') {
@@ -74,7 +64,7 @@ android.libraryVariants.all { variant ->
             description "Generates Javadoc for ${variant.name}."
             source = variant.javaCompile.source
             destinationDir = reporting.file("${variant.name}-docs")
-            ext.androidJar = "${getSdkDir()}/platforms/${android.compileSdkVersion}/android.jar"
+            ext.androidJar = "${System.properties['ANDROID_HOME']}/platforms/${android.compileSdkVersion}/android.jar"
             classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
             options.encoding = 'UTF-8'
             options.charSet 'UTF-8'
