@@ -58,11 +58,12 @@ uploadArchives {
 
 // SDKの場所を取得する
 def getSdkDir() {
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    def sdkDir = properties.getProperty('sdk.dir', null)
+//    Properties properties = new Properties()
+//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//    def sdkDir = properties.getProperty('sdk.dir', null)
 
-    return sdkDir
+//    return sdkDir
+    return System.properties['ANDROID_HOME']
 }
 
 // http://vividcode.hatenablog.com/entry/howto/publish-aar-package-to-maven-central-with-gradle
