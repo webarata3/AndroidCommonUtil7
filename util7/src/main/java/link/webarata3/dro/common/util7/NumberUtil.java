@@ -21,7 +21,7 @@ public abstract class NumberUtil {
             return null;
         }
         try {
-            return Integer.valueOf(Integer.parseInt(value));
+            return Integer.parseInt(value);
         } catch (NumberFormatException e) {
             return null;
         }
