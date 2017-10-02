@@ -125,5 +125,5 @@ apply plugin: 'com.github.kt3k.coveralls'
 
 coveralls {
     jacocoReportPath = '${buildDir}/build/reports/jacoco/jacoco/jacoco.xml'
-    jacocoReportPath = '${buildDir}/build/reports/coverage/debug/report.xml'
+   // jacocoReportPath = '${buildDir}/build/reports/coverage/debug/report.xml'
 }
