@@ -23,4 +23,4 @@ script:
   - ./gradlew test
 
 after_success:
-  - ./gradlew jacocoTestReports coveralls
+  - ./gradlew jacocoTestReport coveralls
