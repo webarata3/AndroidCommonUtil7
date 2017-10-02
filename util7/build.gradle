@@ -124,6 +124,6 @@ findbugs {
 apply plugin: 'com.github.kt3k.coveralls'
 
 coveralls {
-    jacocoReportPath = "${buildDir}/build/reports/jacoco/jacocoTestReport/jacoco.xml"
+    jacocoReportPath = "${buildDir}/reports/jacoco/jacocoTestReport/jacoco.xml"
    // jacocoReportPath = '${buildDir}/build/reports/coverage/debug/report.xml'
 }
