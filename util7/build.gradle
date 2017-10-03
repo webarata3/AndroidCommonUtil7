@@ -41,6 +41,8 @@ dependencies {
     testCompile 'org.hamcrest:hamcrest-core:1.3'
 }
 
+// Maven
+// JavaDocの生成等
 apply plugin: 'maven'
 
 def repo = new File(rootDir, "build/repository")
