@@ -90,6 +90,8 @@ android.libraryVariants.all { variant ->
     }
 }
 
+// JaCoCo
+// task test jacocoTestReport
 apply plugin: 'jacoco'
 
 jacoco {
@@ -121,6 +123,8 @@ findbugs {
     ignoreFailures = true
 }
 
+// COVERALLS
+// task coveralls
 apply plugin: 'com.github.kt3k.coveralls'
 
 coveralls {
