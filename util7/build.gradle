@@ -121,8 +121,20 @@ task jacocoTestReport(type: JacocoReport) {
 // レポート build/reports/findbugs/main.xml
 apply plugin: 'findbugs'
 
-findbugs {
+task findbugs(type: FindBugs) {
     ignoreFailures = true
+    effort = "max"
+    reportLevel = "low" // ＊どのレベルの報告まで対応するかで変更＊
+    // excludeFilter = new File("${project.rootDir}/config/findbugs/findbugs_filter.xml")
+    classes = files("${project.rootDir}/util7/build/intermediates/classes/")
+    source 'src/main'
+    include '**/*.java'
+    reports {
+        xml {
+            destination "${project.rootDir}/build/reports/findbugs_report.xml"
+        }
+    }
+    classpath = files()
 }
 
 // COVERALLS
