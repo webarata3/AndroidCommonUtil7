@@ -20,7 +20,6 @@ public abstract class NumberUtil {
         if (value == null) {
             return null;
         }
-        if (value == "")  return null;
         try {
             if (RegexUtil.find("^(0|[-]?[1-9][0-9]*)$", value) ) {
                 return Integer.parseInt(value);
