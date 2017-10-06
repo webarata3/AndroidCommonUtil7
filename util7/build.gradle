@@ -124,9 +124,9 @@ apply plugin: 'findbugs'
 task findbugs(type: FindBugs) {
     ignoreFailures = true
     effort = "max"
-    reportLevel = "high" // ＊どのレベルの報告まで対応するかで変更＊
+    reportLevel = "low" // ＊どのレベルの報告まで対応するかで変更＊
     excludeFilter = new File("${project.rootDir}/findbugs_filter.xml")
-    classes = files("${project.rootDir}/util7/build/intermediates/classes/release/")
+    classes = files("${project.rootDir}/util7/build/intermediates/classes/")
     source 'src/main'
     include '**/*.java'
     reports {
