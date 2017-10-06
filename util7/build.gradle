@@ -125,7 +125,7 @@ task findbugs(type: FindBugs) {
     ignoreFailures = true
     effort = "max"
     reportLevel = "low" // ＊どのレベルの報告まで対応するかで変更＊
-    // excludeFilter = new File("${project.rootDir}/config/findbugs/findbugs_filter.xml")
+    excludeFilter = new File("${project.rootDir}/findbugs_filter.xml")
     classes = files("${project.rootDir}/util7/build/intermediates/classes/")
     source 'src/main'
     include '**/*.java'
